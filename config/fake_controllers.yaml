@@ -1,0 +1,11 @@
+controller_list:
+  - name: fake_firefly_hexa_base_2_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - hexa_base_2
+      - firefly/imu_joint
+initial:  # Define initial robot poses per group
+#  - group: firefly_hexa_base_2
+#    pose: home
+
+  []

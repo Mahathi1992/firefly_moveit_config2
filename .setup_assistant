@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: rotors_description
+    relative_path: urdf/firefly_base.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/firefly.srdf
+  CONFIG:
+    author_name: Mahathi
+    author_email: mtb.violin@gmail.com
+    generated_timestamp: 1645628476

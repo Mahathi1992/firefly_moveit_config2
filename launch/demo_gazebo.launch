@@ -1,0 +1,26 @@
+<launch>
+
+  <!-- specify the planning pipeline -->
+  <arg name="pipeline" default="ompl" />
+  
+  <!-- Define MAV name -->
+  <arg name="mav_name" default="firefly"/>
+
+  <!-- Gazebo specific options -->
+  <arg name="gazebo_gui" default="true"/>
+  <arg name="paused" default="false"/>
+
+  <!-- launch the gazebo simulator and spawn the robot -->
+  <include file="$(dirname)/gazebo.launch" >
+    <arg name="mav_name" default="$(arg mav_name)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+  </include>
+
+  <group ns="$(arg mav_name)">
+    <include file="$(dirname)/demo.launch" pass_all_args="true">
+      <arg name="load_robot_description" value="false" />
+      <arg name="moveit_controller_manager" value="ros_control" />
+    </include>
+  </group>
+</launch>
