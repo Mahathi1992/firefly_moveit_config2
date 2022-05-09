@@ -1,2 +1,7 @@
 sensors:
-  []
+  - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
+    point_cloud_topic: /firefly/vlp16/velodyne/points
+    max_range: 50.0
+    point_subsample: 1
+    max_update_rate: 10.0
+    filtered_cloud_topic: filtered_cloud
