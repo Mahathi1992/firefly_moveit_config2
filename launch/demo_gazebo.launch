@@ -23,4 +23,8 @@
       <arg name="moveit_controller_manager" value="ros_control" />
     </include>
   </group>
+  
+  <include file="$(find global_mapper_ros)/launch/global_mapper_node.launch">
+  </include>
+
 </launch>
