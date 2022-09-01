@@ -62,6 +62,7 @@
         <rosparam command="load" file="$(find rotors_gazebo)/resource/lee_controller_$(arg mav_name).yaml" />
         <rosparam command="load" file="$(find rotors_gazebo)/resource/$(arg mav_name).yaml" />
         <remap from="odometry" to="odometry_sensor1/odometry" />
+        <remap from="occupancy_grid_topic" to="global_mapper_ros/occupancy_grid" />
     </node>
     <node name="trajectory_publisher_from_moveit" pkg="rotors_gazebo" type="trajectory_publisher_from_moveit" output="screen">
         <remap from="motion_plan_request_topic" to="move_group/motion_plan_request" />
